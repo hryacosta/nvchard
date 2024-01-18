@@ -1,10 +1,8 @@
 local overrides = require "custom.configs.overrides"
 
----@type NvPluginSpec[]
 local plugins = {
 
   -- Override plugin definition options
-
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -119,6 +117,7 @@ local plugins = {
       },
     },
   },
+
   {
     "nvim-neotest/neotest",
     dependencies = {
@@ -131,12 +130,28 @@ local plugins = {
       require "configs.neotest"
     end,
   },
+
   {
     "folke/neodev.nvim",
     opts = {},
     config = function()
       require "custom.configs.neodev"
     end,
+  },
+
+  {
+    "kdheepak/lazygit.nvim",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim",
+    },
+    config = function()
+      require("telescope").load_extension "lazygit"
+    end,
+  },
+  {
+    "codota/tabnine-nvim",
+    build = "./dl_binaries.sh",
   },
   -- {
   --   "folke/persistence.nvim",
