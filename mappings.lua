@@ -28,28 +28,16 @@ M.general = {
         ui.toggle_quick_menu()
       end,
     },
-    ["<C-h>"] = {
+    ["<C-n>"] = {
       function()
         local ui = require "harpoon.ui"
         ui.nav_file(1)
       end,
     },
-    ["<C-t>"] = {
-      function()
-        local ui = require "harpoon.ui"
-        ui.nav_file(2)
-      end,
-    },
-    ["<C-n>"] = {
-      function()
-        local ui = require "harpoon.ui"
-        ui.nav_file(3)
-      end,
-    },
     ["<C-b>"] = {
       function()
         local ui = require "harpoon.ui"
-        ui.nav_file(4)
+        ui.nav_file(2)
       end,
     },
 
@@ -108,13 +96,16 @@ M.general = {
       end,
       "Stop",
     },
-
+    -- tabnine --
     ["<leader>c1"] = {
       function()
         require("tabnine.chat").open()
       end,
       desc = "to open Tabnine Chat",
     },
+
+    -- lazygit --
+    ["<leader>gg"] = { vim.cmd.LazyGit, "lazygit" },
   },
   v = {
     [">"] = { ">gv", "indent" },
