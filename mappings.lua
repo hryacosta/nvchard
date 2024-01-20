@@ -4,6 +4,11 @@ local M = {}
 M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
+    -- neotree--
+    ["<leader>e"] = {
+      vim.cmd.NvimTreeToggle,
+      "toggle nvimTree",
+    },
     --  format with conform
     ["<leader>fm"] = {
       function()
@@ -46,6 +51,7 @@ M.general = {
       vim.cmd.UndotreeToggle,
       "Undo tree",
     },
+
     --- neotest ---
     ["<leader>tt"] = {
       function()
@@ -96,6 +102,7 @@ M.general = {
       end,
       "Stop",
     },
+
     -- tabnine --
     ["<leader>c1"] = {
       function()
@@ -106,24 +113,29 @@ M.general = {
 
     -- lazygit --
     ["<leader>gg"] = { vim.cmd.LazyGit, "lazygit" },
+
+    -- gitblame --
+    ["<leader>gc"] = { "<cmd>GitBlameOpenCommitURL<cr>", "open commit" },
+    ["<leader>gf"] = { "<cmd>GitBlameOpenFileURL<cr>", "open the file" },
+    ["<leader>gs"] = { "<cmd>GitBlameCopySHA<cr>", "copy SHA" },
   },
   v = {
     [">"] = { ">gv", "indent" },
     ["<C-s>"] = { "<cmd>w<cr><esc>", "Save file" },
+
+    --tabnine ---
     ["<leader>c2"] = {
       function()
         require("tabnine.chat.codelens").run_under_cursor "/explain-code"
       end,
       "to open Tabnine ExplainCode",
     },
-
     ["<leader>c3"] = {
       function()
         require("tabnine.chat.codelens").run_under_cursor "/generate-test-for-code"
       end,
       "to open Tabnine TestCode",
     },
-
     ["<leader>c4"] = {
       function()
         require("tabnine.chat.codelens").run_under_cursor "/fix-code"

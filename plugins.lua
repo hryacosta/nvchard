@@ -69,56 +69,6 @@ local plugins = {
   --   "mg979/vim-visual-multi",
   --   lazy = false,
   -- }
-
-  {
-    "folke/flash.nvim",
-    event = "VeryLazy",
-    vscode = true,
-    opts = {},
-    keys = {
-      {
-        "s",
-        mode = { "n", "x", "o" },
-        function()
-          require("flash").jump()
-        end,
-        desc = "Flash",
-      },
-      {
-        "S",
-        mode = { "n", "o", "x" },
-        function()
-          require("flash").treesitter()
-        end,
-        desc = "Flash Treesitter",
-      },
-      {
-        "r",
-        mode = "o",
-        function()
-          require("flash").remote()
-        end,
-        desc = "Remote Flash",
-      },
-      {
-        "R",
-        mode = { "o", "x" },
-        function()
-          require("flash").treesitter_search()
-        end,
-        desc = "Treesitter Search",
-      },
-      {
-        "<A-s>",
-        mode = { "c" },
-        function()
-          require("flash").toggle()
-        end,
-        desc = "Toggle Flash Search",
-      },
-    },
-  },
-
   {
     "nvim-neotest/neotest",
     dependencies = {
@@ -175,34 +125,10 @@ local plugins = {
     end,
     lazy = false,
   },
-  -- {
-  --   "folke/persistence.nvim",
-  --   event = "BufReadPre",
-  --   opts = { options = vim.opt.sessionoptions:get() },
-  --   keys = {
-  --     {
-  --       "<leader>ss",
-  --       function()
-  --         require("persistence").load()
-  --       end,
-  --       desc = "Restore Session",
-  --     },
-  --     {
-  --       "<leader>sl",
-  --       function()
-  --         require("persistence").load { last = true }
-  --       end,
-  --       desc = "Restore Last Session",
-  --     },
-  --     {
-  --       "<leader>sd",
-  --       function()
-  --         require("persistence").stop()
-  --       end,
-  --       desc = "Don't Save Current Session",
-  --     },
-  --   },
-  -- },
+  {
+    "f-person/git-blame.nvim",
+    lazy = false,
+  },
 }
 
 return plugins
