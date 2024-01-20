@@ -129,6 +129,7 @@ local plugins = {
     "f-person/git-blame.nvim",
     lazy = false,
   },
+  { "tpope/vim-fugitive", lazy = false },
 }
 
 return plugins

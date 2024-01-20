@@ -111,13 +111,15 @@ M.general = {
       desc = "to open Tabnine Chat",
     },
 
-    -- lazygit --
+    -- git --
     ["<leader>gg"] = { vim.cmd.LazyGit, "lazygit" },
-
-    -- gitblame --
     ["<leader>gc"] = { "<cmd>GitBlameOpenCommitURL<cr>", "open commit" },
     ["<leader>gf"] = { "<cmd>GitBlameOpenFileURL<cr>", "open the file" },
-    ["<leader>gs"] = { "<cmd>GitBlameCopySHA<cr>", "copy SHA" },
+    ["<leader>gs"] = { vim.cmd.Git, "git status" },
+
+    --- export ---
+
+    ["<leader>pv"] = { vim.cmd.Ex },
   },
   v = {
     [">"] = { ">gv", "indent" },
