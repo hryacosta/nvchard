@@ -8,19 +8,17 @@ M.treesitter = {
     "css",
     "javascript",
     "typescript",
-    -- "typescriptreact",
-    -- "javascriptreact",
     "tsx",
     "c",
     "markdown",
     "markdown_inline",
-    "dart",
+    -- "dart",
   },
   indent = {
     enable = true,
-    -- disable = {
-    --   "python"
-    -- },
+    disable = {
+      "dart",
+    },
   },
 }
 

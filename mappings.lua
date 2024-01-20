@@ -14,60 +14,99 @@ M.general = {
     ["<C-s>"] = { "<cmd>w<cr><esc>", "Save file" },
     ["q"] = { "<cmd>qa<cr>", "Quit all" },
 
-    -- git --
-    ["<leader>gg"] = {
-      ":LazyGit<CR>",
-      "open lazygitj",
+    -- harpoon mark ---
+    ["<leader>a"] = {
+      function()
+        local mark = require "harpoon.mark"
+        mark.add_file()
+      end,
+      "mark file",
+    },
+    ["<C-e>"] = {
+      function()
+        local ui = require "harpoon.ui"
+        ui.toggle_quick_menu()
+      end,
+    },
+    ["<C-h>"] = {
+      function()
+        local ui = require "harpoon.ui"
+        ui.nav_file(1)
+      end,
+    },
+    ["<C-t>"] = {
+      function()
+        local ui = require "harpoon.ui"
+        ui.nav_file(2)
+      end,
+    },
+    ["<C-n>"] = {
+      function()
+        local ui = require "harpoon.ui"
+        ui.nav_file(3)
+      end,
+    },
+    ["<C-b>"] = {
+      function()
+        local ui = require "harpoon.ui"
+        ui.nav_file(4)
+      end,
     },
 
+    --undotree ---
+    ["<leader>u"] = {
+      vim.cmd.UndotreeToggle,
+      "Undo tree",
+    },
     --- neotest ---
     ["<leader>tt"] = {
       function()
-        require("neotest").run.run(vim.fn.expand "%")
+        local neotest = require "neotest"
+        neotest.run.run(vim.fn.expand "%")
       end,
       "Run File",
     },
     ["<leader>tT"] = {
       function()
-        require("neotest").run.run(vim.loop.cwd())
+        local neotest = require "neotest"
+        neotest.run.run(vim.loop.cwd())
       end,
       "Run All Test Files",
     },
     ["<leader>tr"] = {
       function()
-        require("neotest").run.run()
+        local neotest = require "neotest"
+        neotest.run.run()
       end,
       "Run Nearest",
     },
     ["<leader>ts"] = {
       function()
-        require("neotest").summary.toggle()
+        local neotest = require "neotest"
+        neotest.summary.toggle()
       end,
       "Toggle Summary",
     },
     ["<leader>to"] = {
       function()
-        require("neotest").output.open { enter = true, auto_close = true }
+        local neotest = require "neotest"
+        neotest.output.open { enter = true, auto_close = true }
       end,
       "Show Output",
     },
     ["<leader>tO"] = {
       function()
-        require("neotest").output_panel.toggle()
+        local neotest = require "neotest"
+        neotest.output_panel.toggle()
       end,
       "Toggle Output Panel",
     },
     ["<leader>tS"] = {
       function()
-        require("neotest").run.stop()
+        local neotest = require "neotest"
+        neotest.run.stop()
       end,
       "Stop",
-    },
-    ["<leader>ut"] = {
-      function()
-        require("base46").toggle_transparency()
-      end,
-      "Toggle transparency",
     },
 
     ["<leader>c1"] = {

@@ -20,6 +20,7 @@ local plugins = {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
+    -- enabled = false,
   },
 
   {
@@ -152,6 +153,17 @@ local plugins = {
   {
     "codota/tabnine-nvim",
     build = "./dl_binaries.sh",
+  },
+  {
+    "ThePrimeagen/harpoon",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+  },
+
+  {
+    "mbbill/undotree",
+    config = function() end,
   },
   -- {
   --   "folke/persistence.nvim",
