@@ -12,7 +12,17 @@ M.treesitter = {
     "c",
     "markdown",
     "markdown_inline",
-    "dart",
+    -- "dart",
+    "bash",
+    "json",
+    "python",
+    "rust",
+    "toml",
+    "yaml",
+    "json",
+    "xml",
+    "jsdoc",
+    "gitignore",
   },
   indent = {
     enable = true,
@@ -27,7 +37,6 @@ M.mason = {
     -- lua stuff
     "lua-language-server",
     "stylua",
-
     "rust_analizer",
     -- web dev stuff
     "css-lsp",

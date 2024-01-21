@@ -69,6 +69,7 @@ local plugins = {
   --   "mg979/vim-visual-multi",
   --   lazy = false,
   -- }
+  { "nvim-neotest/neotest-plenary" },
   {
     "nvim-neotest/neotest",
     dependencies = {
@@ -77,10 +78,57 @@ local plugins = {
       "nvim-treesitter/nvim-treesitter",
       "nvim-neotest/neotest-jest",
     },
-    config = function()
-      require "custom.configs.neotest"
+    opts = {
+      adapters = { "neotest-plenary" },
+      status = { virtual_text = true },
+      output = { open_on_run = true },
+      quickfix = {
+        open = function()
+          require("trouble").open { mode = "quickfix", focus = false }
+        end,
+      },
+    },
+    config = function(_, opts)
+      local neotest_ns = vim.api.nvim_create_namespace "neotest"
+      vim.diagnostic.config({
+        virtual_text = {
+          format = function(diagnostic)
+            -- Replace newline and tab characters with space for more compact diagnostics
+            local message = diagnostic.message:gsub("\n", " "):gsub("\t", " "):gsub("%s+", " "):gsub("^%s+", "")
+            return message
+          end,
+        },
+      }, neotest_ns)
+      opts.consumers = opts.consumers or {}
+      opts.consumers.trouble = function(client)
+        client.listeners.results = function(adapter_id, results, partial)
+          if partial then
+            return
+          end
+          local tree = assert(client:get_position(nil, { adapter = adapter_id }))
+
+          local failed = 0
+          for pos_id, result in pairs(results) do
+            if result.status == "failed" and tree:get_key(pos_id) then
+              failed = failed + 1
+            end
+          end
+          vim.schedule(function()
+            local trouble = require "trouble"
+            if trouble.is_open() then
+              trouble.refresh()
+              if failed == 0 then
+                trouble.close()
+              end
+            end
+          end)
+          return {}
+        end
+      end
+      opts.adapters = require "custom.configs.neotest"
+
+      require("neotest").setup(opts)
     end,
-    layz = false,
   },
   {
     "folke/neodev.nvim",
@@ -164,6 +212,13 @@ local plugins = {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     cmd = { "TroubleToggle", "Trouble" },
     opts = { use_diagnostic_signs = true },
+  },
+
+  {
+    "mortepau/codicons.nvim",
+    config = function()
+      require("codicons").setup()
+    end,
   },
 }
 

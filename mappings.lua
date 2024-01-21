@@ -18,6 +18,8 @@ M.general = {
     },
     ["<C-s>"] = { "<cmd>w<cr><esc>", "Save file" },
     ["<C-q>"] = { "<cmd>qa<cr>", "Quit all" },
+
+    -- lsp references --
     ["<leader>rd"] = { vim.lsp.buf.references, "references" },
 
     -- harpoon mark ---
