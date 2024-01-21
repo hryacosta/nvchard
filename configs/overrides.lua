@@ -12,13 +12,13 @@ M.treesitter = {
     "c",
     "markdown",
     "markdown_inline",
-    -- "dart",
+    "dart",
   },
   indent = {
     enable = true,
-    disable = {
-      "dart",
-    },
+    -- disable = {
+    --   "dart",
+    -- },
   },
 }
 

@@ -9,9 +9,7 @@ local servers = {
   "cssls",
   "tsserver",
   "clangd",
-  "dartls",
-  "eslint_d",
-  "prettierd",
+  -- "dartls",
   "rust_analizer",
 }
 

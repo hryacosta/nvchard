@@ -78,16 +78,17 @@ local plugins = {
       "nvim-neotest/neotest-jest",
     },
     config = function()
-      require "configs.neotest"
+      require "custom.configs.neotest"
     end,
+    layz = false,
   },
-
   {
     "folke/neodev.nvim",
     opts = {},
     config = function()
       require "custom.configs.neodev"
     end,
+    lazy = false,
   },
 
   {
@@ -107,7 +108,7 @@ local plugins = {
     config = function()
       require("tabnine").setup {
         disable_auto_comment = true,
-        accept_keymap = "<Tab>",
+        accept_keymap = "<C-g>",
         dismiss_keymap = "<C-]>",
         debounce_ms = 800,
         suggestion_color = { gui = "#808080", cterm = 244 },
@@ -127,6 +128,7 @@ local plugins = {
     "mbbill/undotree",
     lazy = false,
   },
+
   {
     "kdheepak/lazygit.nvim",
     dependencies = {
@@ -138,11 +140,31 @@ local plugins = {
     end,
     lazy = false,
   },
+
   {
     "f-person/git-blame.nvim",
     lazy = false,
   },
+
   { "tpope/vim-fugitive", lazy = false },
+
+  {
+    "akinsho/flutter-tools.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "stevearc/dressing.nvim",
+    },
+    config = function()
+      require("flutter-tools").setup {}
+    end,
+    layz = false,
+  },
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    cmd = { "TroubleToggle", "Trouble" },
+    opts = { use_diagnostic_signs = true },
+  },
 }
 
 return plugins
