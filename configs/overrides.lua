@@ -12,7 +12,7 @@ M.treesitter = {
     "c",
     "markdown",
     "markdown_inline",
-    -- "dart",
+    "dart",
     "bash",
     "json",
     "python",
@@ -23,12 +23,20 @@ M.treesitter = {
     "xml",
     "jsdoc",
     "gitignore",
+    "gitattributes",
+    "git_rebase",
+    "gitignore",
+    "git_config",
+    "gitcommit",
+    "graphql",
+    "cpp",
+    "cmake",
   },
   indent = {
     enable = true,
-    -- disable = {
-    --   "dart",
-    -- },
+    disable = {
+      "dart",
+    },
   },
 }
 
@@ -47,7 +55,8 @@ M.mason = {
     -- c/cpp stuff
     "clangd",
     "clang-format",
-
+    "eslint",
+    "prettier",
     "prettierd",
     "eslint_d",
   },

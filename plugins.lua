@@ -69,7 +69,15 @@ local plugins = {
   --   "mg979/vim-visual-multi",
   --   lazy = false,
   -- }
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    cmd = { "TroubleToggle", "Trouble" },
+    opts = { use_diagnostic_signs = true },
+  },
+
   { "nvim-neotest/neotest-plenary" },
+
   {
     "nvim-neotest/neotest",
     dependencies = {
@@ -77,6 +85,9 @@ local plugins = {
       "antoinemadec/FixCursorHold.nvim",
       "nvim-treesitter/nvim-treesitter",
       "nvim-neotest/neotest-jest",
+      "sidlatau/neotest-dart",
+      "rcasia/neotest-java",
+      "rouge8/neotest-rust",
     },
     opts = {
       adapters = { "neotest-plenary" },
@@ -206,12 +217,6 @@ local plugins = {
       require("flutter-tools").setup {}
     end,
     layz = false,
-  },
-  {
-    "folke/trouble.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    cmd = { "TroubleToggle", "Trouble" },
-    opts = { use_diagnostic_signs = true },
   },
 
   {
