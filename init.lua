@@ -67,3 +67,4 @@ opt.fillchars = {
   diff = "╱",
   eob = " ",
 }
+

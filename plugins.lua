@@ -209,14 +209,15 @@ local plugins = {
 
   {
     "akinsho/flutter-tools.nvim",
+    lazy = false,
     dependencies = {
       "nvim-lua/plenary.nvim",
-      "stevearc/dressing.nvim",
+      "stevearc/dressing.nvim", -- optional for vim.ui.select
     },
-    config = function()
+    config = true,
+    init = function()
       require("flutter-tools").setup {}
     end,
-    layz = false,
   },
 
   {
@@ -224,6 +225,18 @@ local plugins = {
     config = function()
       require("codicons").setup()
     end,
+  },
+
+  {
+    "telescope.nvim",
+    dependencies = {
+      "nvim-telescope/telescope-fzf-native.nvim",
+      build = "make",
+      config = function()
+        require("telescope").load_extension "flutter"
+        require("telescope").load_extension "fzf"
+      end,
+    },
   },
 }
 

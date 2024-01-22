@@ -154,6 +154,14 @@ M.general = {
       end,
       "Next trouble/quickfix item",
     },
+
+    -- flutter ---
+    ["<C-f>"] = {
+      function()
+        require("telescope").extensions.flutter.commands()
+      end,
+      "flutter commands",
+    },
   },
   v = {
     [">"] = { ">gv", "indent" },
