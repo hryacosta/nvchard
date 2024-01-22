@@ -4,6 +4,7 @@ local M = {}
 M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
+    ["-"] = { "<CMD>Oil<CR>", "Open parent directory" },
     -- neotree--
     ["<leader>e"] = {
       vim.cmd.NvimTreeToggle,
