@@ -9,11 +9,11 @@ local opt = vim.opt
 
 vim.g.autoformat = true
 
--- autocmd("VimEnter", {
---   callback = function()
---     vim.cmd.Ex()
---   end,
--- })
+autocmd("VimEnter", {
+  callback = function()
+    vim.cmd.Ex()
+  end,
+})
 
 opt.autowrite = true -- Enable auto write
 opt.clipboard = "unnamedplus" -- Sync with system clipboard
