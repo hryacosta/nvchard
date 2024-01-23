@@ -238,13 +238,13 @@ local plugins = {
       end,
     },
   },
-  {
-    "stevearc/oil.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    init = function()
-      require "custom.configs.oil"
-    end,
-  },
+  -- {
+  --   "stevearc/oil.nvim",
+  --   dependencies = { "nvim-tree/nvim-web-devicons" },
+  --   init = function()
+  --     require "custom.configs.oil"
+  --   end,
+  -- },
 }
 
 return plugins
