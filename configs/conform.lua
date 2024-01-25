@@ -15,6 +15,7 @@ local options = {
     markdown = { "prettierd" },
     python = { "isort", "black" },
     yaml = { "prettierd" },
+    java = { "google-java-format", "standardjs" },
   },
 
   -- adding same formatter for multiple filetypes can look too much work for some

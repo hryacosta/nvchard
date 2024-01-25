@@ -31,6 +31,7 @@ M.treesitter = {
     "graphql",
     "cpp",
     "cmake",
+    "java",
   },
   indent = {
     enable = true,
@@ -59,6 +60,9 @@ M.mason = {
     "prettier",
     "prettierd",
     "eslint_d",
+    "google-java-format",
+    "standardjs",
+    "gradle-language-server",
   },
 }
 
