@@ -106,6 +106,8 @@ M.general = {
       end,
       "Stop",
     },
+    ["<leader>tR"] = { "<cmd>CoverageSummary<cr>", "coverage summary" },
+    ["<leader>tC"] = { "<cmd>Coverage<cr>", "coverage" },
 
     -- tabnine --
     ["<leader>c1"] = {

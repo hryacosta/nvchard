@@ -238,6 +238,19 @@ local plugins = {
       end,
     },
   },
+  {
+    "andythigpen/nvim-coverage",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    rocks = { "lua-xmlreader" },
+    config = function()
+      require("coverage").setup()
+    end,
+    init = function()
+      require("coverage").setup()
+    end,
+  },
   -- {
   --   "stevearc/oil.nvim",
   --   dependencies = { "nvim-tree/nvim-web-devicons" },
