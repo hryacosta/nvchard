@@ -3,11 +3,15 @@ local M = {}
 
 M.general = {
   n = {
-    [";"] = { ":", "enter command mode", opts = { nowait = true } },
+    -- [";"] = { ":", "enter command mode", opts = { nowait = true } },
     -- ["-"] = { "<CMD>Oil<CR>", "Open parent directory" },
     -- neotree--
+    -- ["<leader>e"] = {
+    --   vim.cmd.NvimTreeToggle,
+    --   "toggle nvimTree",
+    -- },
     ["<leader>e"] = {
-      vim.cmd.NvimTreeToggle,
+      vim.cmd.Ex,
       "toggle nvimTree",
     },
     --  format with conform
@@ -18,7 +22,6 @@ M.general = {
       "formatting",
     },
     ["<C-s>"] = { "<cmd>w<cr><esc>", "Save file" },
-    ["<C-q>"] = { "<cmd>qa<cr>", "Quit all" },
 
     -- lsp references --
     ["<leader>rd"] = { vim.lsp.buf.references, "references" },
@@ -31,6 +34,7 @@ M.general = {
       end,
       "mark file",
     },
+
     ["<C-e>"] = {
       function()
         local ui = require "harpoon.ui"
@@ -158,13 +162,13 @@ M.general = {
       "Next trouble/quickfix item",
     },
 
-    -- flutter ---
-    ["<C-f>"] = {
-      function()
-        require("telescope").extensions.flutter.commands()
-      end,
-      "flutter commands",
-    },
+    -- -- flutter ---
+    -- ["<C-f>"] = {
+    --   function()
+    --     require("telescope").extensions.flutter.commands()
+    --   end,
+    --   "flutter commands",
+    -- },
   },
   v = {
     [">"] = { ">gv", "indent" },

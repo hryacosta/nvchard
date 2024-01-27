@@ -20,7 +20,6 @@ local plugins = {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
-    -- enabled = false,
   },
 
   {
@@ -238,6 +237,7 @@ local plugins = {
       end,
     },
   },
+
   {
     "andythigpen/nvim-coverage",
     dependencies = {
@@ -250,6 +250,14 @@ local plugins = {
     init = function()
       require("coverage").setup()
     end,
+  },
+
+  {
+    "gelguy/wilder.nvim",
+    config = function()
+      require("wilder").setup { modes = { ":", "/", "?" } }
+    end,
+    lazy = false,
   },
   -- {
   --   "stevearc/oil.nvim",
