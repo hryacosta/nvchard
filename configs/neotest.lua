@@ -1,6 +1,6 @@
 local adapters = {
   require "neotest-jest" {
-    jestCommand = "npm test --",
+    jestCommand = "npx jest --coverage --maxWorkers=2 --forceExit",
     jestConfigFile = "jest.config.js",
     env = { CI = true },
     cwd = function(path)
