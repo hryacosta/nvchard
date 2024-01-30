@@ -55,10 +55,10 @@ M.general = {
     },
 
     --undotree ---
-    ["<leader>u"] = {
-      vim.cmd.UndotreeToggle,
-      "Undo tree",
-    },
+    -- ["<leader>u"] = {
+    --   vim.cmd.UndotreeToggle,
+    --   "Undo tree",
+    -- },
 
     --- neotest ---
     ["<leader>tt"] = {

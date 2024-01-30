@@ -182,10 +182,10 @@ local plugins = {
     },
   },
 
-  {
-    "mbbill/undotree",
-    lazy = false,
-  },
+  -- {
+  --   "mbbill/undotree",
+  --   lazy = false,
+  -- },
 
   {
     "kdheepak/lazygit.nvim",
