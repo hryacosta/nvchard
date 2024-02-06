@@ -6,11 +6,11 @@ M.general = {
     -- [";"] = { ":", "enter command mode", opts = { nowait = true } },
     -- ["-"] = { "<CMD>Oil<CR>", "Open parent directory" },
     -- neotree--
-    -- ["<leader>e"] = {
-    --   vim.cmd.NvimTreeToggle,
-    --   "toggle nvimTree",
-    -- },
     ["<leader>e"] = {
+      vim.cmd.NvimTreeToggle,
+      "toggle nvimTree",
+    },
+    ["<leader>pv"] = {
       vim.cmd.Ex,
       "toggle nvimTree",
     },
