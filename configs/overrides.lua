@@ -63,6 +63,9 @@ M.mason = {
     "google-java-format",
     "standardjs",
     "gradle-language-server",
+    "dart-debug-adapter",
+    "swift-mesonlsp",
+    "java-debug-adapter",
   },
 }
 

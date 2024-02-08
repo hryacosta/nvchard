@@ -123,20 +123,19 @@ local plugins = {
               failed = failed + 1
             end
           end
-          vim.schedule(function()
-            local trouble = require "trouble"
-            if trouble.is_open() then
-              trouble.refresh()
-              if failed == 0 then
-                trouble.close()
-              end
-            end
-          end)
+          -- vim.schedule(function()
+          --   local trouble = require "trouble"
+          --   if trouble.is_open() then
+          --     trouble.refresh()
+          --     if failed == 0 then
+          --       trouble.close()
+          --     end
+          --   end
+          -- end)
           return {}
         end
       end
       opts.adapters = require "custom.configs.neotest"
-
       require("neotest").setup(opts)
     end,
   },
@@ -258,6 +257,9 @@ local plugins = {
       require("wilder").setup { modes = { ":", "/", "?" } }
     end,
     lazy = false,
+  },
+  {
+    "mfussenegger/nvim-dap",
   },
   -- {
   --   "stevearc/oil.nvim",

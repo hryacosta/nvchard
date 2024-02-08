@@ -10,10 +10,7 @@ M.general = {
       vim.cmd.NvimTreeToggle,
       "toggle nvimTree",
     },
-    ["<leader>pv"] = {
-      vim.cmd.Ex,
-      "toggle nvimTree",
-    },
+
     --  format with conform
     ["<leader>fm"] = {
       function()
@@ -67,6 +64,13 @@ M.general = {
         neotest.run.run(vim.fn.expand "%")
       end,
       "Run File",
+    },
+    ["<leader>td"] = {
+      function()
+        local neotest = require "neotest"
+        neotest.run.run { strategy = "dap" }
+      end,
+      "Debug File",
     },
     ["<leader>tT"] = {
       function()
