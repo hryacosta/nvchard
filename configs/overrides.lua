@@ -56,12 +56,9 @@ M.mason = {
     -- c/cpp stuff
     "clangd",
     "clang-format",
-    "eslint",
-    "prettier",
     "prettierd",
     "eslint_d",
-    "google-java-format",
-    "standardjs",
+    "eslint_lsp",
     "gradle-language-server",
     "dart-debug-adapter",
     "swift-mesonlsp",
