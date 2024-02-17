@@ -452,11 +452,15 @@ local plugins = {
     },
     config = function()
       local Config = {
-        Stopped = { "󰁕 ", "DiagnosticWarn", "DapStoppedLine" },
-        Breakpoint = " ",
-        BreakpointCondition = " ",
-        BreakpointRejected = { " ", "DiagnosticError" },
-        LogPoint = ".>",
+        icons = {
+          dap = {
+            Stopped = { "󰁕 ", "DiagnosticWarn", "DapStoppedLine" },
+            Breakpoint = " ",
+            BreakpointCondition = " ",
+            BreakpointRejected = { " ", "DiagnosticError" },
+            LogPoint = ".>",
+          },
+        },
       }
       vim.api.nvim_set_hl(0, "DapStoppedLine", { default = true, link = "Visual" })
 
