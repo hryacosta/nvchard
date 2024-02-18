@@ -473,6 +473,10 @@ local plugins = {
       end
     end,
   },
+  {
+    "hankchiutw/flutter-reload.vim",
+    lazy = false,
+  },
 
   -- {
   --   "stevearc/oil.nvim",
