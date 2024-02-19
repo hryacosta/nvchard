@@ -475,6 +475,7 @@ local plugins = {
   },
   {
     "hankchiutw/flutter-reload.vim",
+
     lazy = false,
   },
 
