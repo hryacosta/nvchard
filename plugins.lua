@@ -19,6 +19,8 @@ local plugins = {
 
   {
     "nvim-treesitter/nvim-treesitter",
+    version = "0.9.1",
+    commit = "63260da18bf273c76b8e2ea0db84eb901cab49ce",
     opts = overrides.treesitter,
   },
 
@@ -91,23 +93,23 @@ local plugins = {
       adapters = { "neotest-plenary" },
       status = { virtual_text = true },
       output = { open_on_run = true },
-      quickfix = {
-        open = function()
-          -- require("trouble").open { mode = "quickfix", focus = false }
-        end,
-      },
+      -- quickfix = {
+      --   open = function()
+      --     -- require("trouble").open { mode = "quickfix", focus = false }
+      --   end,
+      -- },
     },
     config = function(_, opts)
       local neotest_ns = vim.api.nvim_create_namespace "neotest"
-      vim.diagnostic.config({
-        virtual_text = {
-          format = function(diagnostic)
-            -- Replace newline and tab characters with space for more compact diagnostics
-            local message = diagnostic.message:gsub("\n", " "):gsub("\t", " "):gsub("%s+", " "):gsub("^%s+", "")
-            return message
-          end,
-        },
-      }, neotest_ns)
+      -- vim.diagnostic.config({
+      --   virtual_text = {
+      --     format = function(diagnostic)
+      --       -- Replace newline and tab characters with space for more compact diagnostics
+      --       local message = diagnostic.message:gsub("\n", " "):gsub("\t", " "):gsub("%s+", " "):gsub("^%s+", "")
+      --       return message
+      --     end,
+      --   },
+      -- }, neotest_ns)
       opts.consumers = opts.consumers or {}
       opts.consumers.trouble = function(client)
         client.listeners.results = function(adapter_id, results, partial)
@@ -135,9 +137,7 @@ local plugins = {
         end
       end
       opts.adapters = require "custom.configs.neotest"
-      -- opts.discovery = {
-      --   enabled = false,
-      -- }
+
       require("neotest").setup(opts)
     end,
   },
@@ -147,7 +147,6 @@ local plugins = {
     config = function()
       require "custom.configs.neodev"
     end,
-    lazy = false,
   },
 
   {
@@ -178,9 +177,8 @@ local plugins = {
   },
   {
     "ThePrimeagen/harpoon",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" },
   },
 
   -- {
@@ -356,6 +354,7 @@ local plugins = {
       {
         "<leader>da",
         function()
+          local get_args = ""
           require("dap").continue { before = get_args }
         end,
         desc = "Run with Args",
@@ -489,16 +488,16 @@ local plugins = {
       "MunifTanjim/nui.nvim",
     },
   },
-  {
-    "j-hui/fidget.nvim",
-    opts = {
-      integration = {
-        ["nvim-tree"] = {
-          enable = true,
-        },
-      },
-    },
-  },
+  -- {
+  --   "j-hui/fidget.nvim",
+  --   opts = {
+  --     integration = {
+  --       ["nvim-tree"] = {
+  --         enable = true,
+  --       },
+  --     },
+  --   },
+  -- },
 
   -- {
   --   "stevearc/oil.nvim",
