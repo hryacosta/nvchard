@@ -26,7 +26,6 @@ local plugins = {
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
   },
-
   -- Install a plugin
   {
     "max397574/better-escape.nvim",
@@ -99,16 +98,16 @@ local plugins = {
       },
     },
     config = function(_, opts)
-      -- local neotest_ns = vim.api.nvim_create_namespace "neotest"
-      -- vim.diagnostic.config({
-      --   virtual_text = {
-      --     format = function(diagnostic)
-      --       -- Replace newline and tab characters with space for more compact diagnostics
-      --       local message = diagnostic.message:gsub("\n", " "):gsub("\t", " "):gsub("%s+", " "):gsub("^%s+", "")
-      --       return message
-      --     end,
-      --   },
-      -- }, neotest_ns)
+      local neotest_ns = vim.api.nvim_create_namespace "neotest"
+      vim.diagnostic.config({
+        virtual_text = {
+          format = function(diagnostic)
+            -- Replace newline and tab characters with space for more compact diagnostics
+            local message = diagnostic.message:gsub("\n", " "):gsub("\t", " "):gsub("%s+", " "):gsub("^%s+", "")
+            return message
+          end,
+        },
+      }, neotest_ns)
       opts.consumers = opts.consumers or {}
       opts.consumers.trouble = function(client)
         client.listeners.results = function(adapter_id, results, partial)
@@ -123,19 +122,22 @@ local plugins = {
               failed = failed + 1
             end
           end
-          -- vim.schedule(function()
-          --   local trouble = require "trouble"
-          --   if trouble.is_open() then
-          --     trouble.refresh()
-          --     if failed == 0 then
-          --       trouble.close()
-          --     end
-          --   end
-          -- end)
+          vim.schedule(function()
+            local trouble = require "trouble"
+            if trouble.is_open() then
+              trouble.refresh()
+              if failed == 0 then
+                trouble.close()
+              end
+            end
+          end)
           return {}
         end
       end
       opts.adapters = require "custom.configs.neotest"
+      -- opts.discovery = {
+      --   enabled = false,
+      -- }
       require("neotest").setup(opts)
     end,
   },
@@ -475,8 +477,27 @@ local plugins = {
   },
   {
     "hankchiutw/flutter-reload.vim",
-
     lazy = false,
+  },
+  {
+    "bennypowers/nvim-regexplainer",
+    config = function()
+      require("regexplainer").setup()
+    end,
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "MunifTanjim/nui.nvim",
+    },
+  },
+  {
+    "j-hui/fidget.nvim",
+    opts = {
+      integration = {
+        ["nvim-tree"] = {
+          enable = true,
+        },
+      },
+    },
   },
 
   -- {
