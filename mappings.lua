@@ -5,9 +5,14 @@ M.general = {
   n = {
     -- [";"] = { ":", "enter command mode", opts = { nowait = true } },
     -- ["-"] = { "<CMD>Oil<CR>", "Open parent directory" },
+    ["<leader>`"] = {
+      "<CMD>q<CR>",
+      "exit",
+    },
     -- neotree--
     ["<leader>e"] = {
-      vim.cmd.NvimTreeToggle,
+      -- vim.cmd.NvimTreeToggle,
+      "<CMD>Oil<CR>",
       "toggle nvimTree",
     },
 
@@ -76,6 +81,13 @@ M.general = {
     --   vim.cmd.UndotreeToggle,
     --   "Undo tree",
     -- },
+    -- persistence --
+    ["<leader>s"] = {
+      function()
+        require("persistence").load()
+      end,
+      "restore the last session",
+    },
 
     --- neotest ---
     ["<leader>tt"] = {

@@ -182,7 +182,15 @@ local plugins = {
     branch = "harpoon2",
     dependencies = { "nvim-lua/plenary.nvim" },
     init = function()
-      require("harpoon").setup()
+      require("harpoon").setup {
+        settings = {
+          save_on_toggle = true,
+          sync_on_ui_close = true,
+          key = function()
+            return vim.loop.cwd()
+          end,
+        },
+      }
     end,
   },
 
@@ -509,6 +517,16 @@ local plugins = {
       }
     end,
   },
+  {
+    "folke/persistence.nvim",
+    event = "BufReadPre", -- this will only start session saving when an actual file was opened
+    opts = {
+      dir = vim.fn.expand(vim.fn.stdpath "state" .. "/sessions/"),
+      options = { "buffers", "curdir", "tabpages", "winsize" },
+      pre_save = nil,
+      save_empty = false,
+    },
+  },
   -- {
   --   "bennypowers/nvim-regexplainer",
   --   config = function()
@@ -520,13 +538,13 @@ local plugins = {
   --   },
   -- },
 
-  -- {
-  --   "stevearc/oil.nvim",
-  --   dependencies = { "nvim-tree/nvim-web-devicons" },
-  --   init = function()
-  --     require "custom.configs.oil"
-  --   end,
-  -- },
+  {
+    "stevearc/oil.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    init = function()
+      require "custom.configs.oil"
+    end,
+  },
 }
 
 return plugins
