@@ -26,32 +26,36 @@ M.general = {
     -- harpoon mark ---
     ["<leader>a"] = {
       function()
-        local harpoon = require "harpoon.mark"
-        harpoon.add_file()
-        -- harpoon:list():append()
+        -- local harpoon = require "harpoon.mark"
+        -- harpoon.add_file()
+        local harpoon = require "harpoon"
+        harpoon:list():append()
       end,
       "mark file",
     },
 
     ["<C-e>"] = {
       function()
-        local harpoon = require "harpoon.ui"
-        harpoon.toggle_quick_menu()
-        -- harpoon.ui:toggle_quick_menu(harpoon:list())
+        -- local harpoon = require "harpoon.ui"
+        -- harpoon.toggle_quick_menu()
+        local harpoon = require "harpoon"
+        harpoon.ui:toggle_quick_menu(harpoon:list())
       end,
     },
     ["<C-n>"] = {
       function()
-        local harpoon = require "harpoon.ui"
-        harpoon.nav_file(1)
-        -- harpoon:list():select(1)
+        -- local harpoon = require "harpoon.ui"
+        -- harpoon.nav_file(1)
+        local harpoon = require "harpoon"
+        harpoon:list():select(1)
       end,
     },
     ["<C-b>"] = {
       function()
-        local harpoon = require "harpoon.ui"
-        harpoon.nav_file(2)
-        -- harpoon:list():select(1)
+        -- local harpoon = require "harpoon.ui"
+        -- harpoon.nav_file(2)
+        local harpoon = require "harpoon"
+        harpoon:list():select(1)
       end,
     },
     -- ["<C-S-P>"] = {
@@ -60,12 +64,12 @@ M.general = {
     --     harpoon:list():prev()
     --   end,
     -- },
-    ["<C-S-N>"] = {
-      function()
-        local harpoon = require "harpoon"
-        harpoon:list():next()
-      end,
-    },
+    -- ["<C-S-N>"] = {
+    --   function()
+    --     local harpoon = require "harpoon"
+    --     harpoon:list():next()
+    --   end,
+    -- },
 
     --undotree ---
     -- ["<leader>u"] = {

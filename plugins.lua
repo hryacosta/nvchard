@@ -19,8 +19,8 @@ local plugins = {
 
   {
     "nvim-treesitter/nvim-treesitter",
-    tag = "0.9.0",
-    commit = "63260da18bf273c76b8e2ea0db84eb901cab49ce",
+    -- tag = "0.9.0",
+    -- commit = "63260da18bf273c76b8e2ea0db84eb901cab49ce",
     opts = overrides.treesitter,
   },
 
