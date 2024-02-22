@@ -19,8 +19,7 @@ local plugins = {
 
   {
     "nvim-treesitter/nvim-treesitter",
-    -- tag = "0.9.0",
-    -- commit = "63260da18bf273c76b8e2ea0db84eb901cab49ce",
+    tag = "v0.9.1",
     opts = overrides.treesitter,
   },
 
@@ -84,7 +83,10 @@ local plugins = {
       "nvim-lua/plenary.nvim",
       "antoinemadec/FixCursorHold.nvim",
       "nvim-treesitter/nvim-treesitter",
-      "nvim-neotest/neotest-jest",
+      {
+        "nvim-neotest/neotest-jest",
+        commit = "c2118446d770fedb360a91b1d91a7025db86d4f1",
+      },
       "sidlatau/neotest-dart",
       "rcasia/neotest-java",
       "rouge8/neotest-rust",
@@ -179,6 +181,9 @@ local plugins = {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
     dependencies = { "nvim-lua/plenary.nvim" },
+    init = function()
+      require("harpoon").setup()
+    end,
   },
 
   -- {
@@ -477,6 +482,32 @@ local plugins = {
   {
     "hankchiutw/flutter-reload.vim",
     lazy = false,
+  },
+  {
+
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    after = "nvim-treesitter",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    config = function()
+      require("treesitter-context").setup {
+        enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
+        max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
+        min_window_height = 0, -- Minimum editor window height to enable context. Values <= 0 mean no limit.
+        line_numbers = true,
+        multiline_threshold = 20, -- Maximum number of lines to show for a single context
+        trim_scope = "outer", -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
+        mode = "cursor", -- Line used to calculate context. Choices: 'cursor', 'topline'
+        -- Separator between context and content. Should be a single character string, like '-'.
+        -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
+        separator = nil,
+        zindex = 20, -- The Z-index of the context window
+        on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
+      }
+    end,
   },
   -- {
   --   "bennypowers/nvim-regexplainer",

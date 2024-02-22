@@ -58,7 +58,7 @@ M.mason = {
     "clang-format",
     "prettierd",
     "eslint_d",
-    "eslint_lsp",
+    "eslint-lsp",
     "gradle-language-server",
     "dart-debug-adapter",
     "swift-mesonlsp",
