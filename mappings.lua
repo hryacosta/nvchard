@@ -55,7 +55,7 @@ M.general = {
         -- local harpoon = require "harpoon.ui"
         -- harpoon.nav_file(2)
         local harpoon = require "harpoon"
-        harpoon:list():select(1)
+        harpoon:list():select(2)
       end,
     },
     -- ["<C-S-P>"] = {
