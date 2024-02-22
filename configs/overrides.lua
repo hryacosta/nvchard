@@ -28,6 +28,10 @@ M.treesitter = {
     "go",
   },
   auto_install = true,
+
+  highlight = {
+    enable = false,
+  },
   indent = {
     enable = true,
     disable = {

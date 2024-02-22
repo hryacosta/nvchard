@@ -19,7 +19,7 @@ local plugins = {
 
   {
     "nvim-treesitter/nvim-treesitter",
-    version = "0.9.1",
+    tag = "0.9.0",
     commit = "63260da18bf273c76b8e2ea0db84eb901cab49ce",
     opts = overrides.treesitter,
   },
@@ -478,24 +478,14 @@ local plugins = {
     "hankchiutw/flutter-reload.vim",
     lazy = false,
   },
-  {
-    "bennypowers/nvim-regexplainer",
-    config = function()
-      require("regexplainer").setup()
-    end,
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      "MunifTanjim/nui.nvim",
-    },
-  },
   -- {
-  --   "j-hui/fidget.nvim",
-  --   opts = {
-  --     integration = {
-  --       ["nvim-tree"] = {
-  --         enable = true,
-  --       },
-  --     },
+  --   "bennypowers/nvim-regexplainer",
+  --   config = function()
+  --     require("regexplainer").setup()
+  --   end,
+  --   dependencies = {
+  --     "nvim-treesitter/nvim-treesitter",
+  --     "MunifTanjim/nui.nvim",
   --   },
   -- },
 
