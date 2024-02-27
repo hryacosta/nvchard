@@ -41,7 +41,6 @@ M.general = {
 
     ["<C-e>"] = {
       function()
-        -- local harpoon = require "harpoon.ui"
         -- harpoon.toggle_quick_menu()
         local harpoon = require "harpoon"
         harpoon.ui:toggle_quick_menu(harpoon:list())
@@ -232,6 +231,13 @@ M.general = {
   },
   i = {
     ["<C-s>"] = { "<cmd>w<cr><esc>", "Save file" },
+    ["<C-l>"] = {
+      function()
+        vim.fn.feedkeys(vim.fn["copilot#Accept"](), "")
+      end,
+      "Copilot Accept",
+      { replace_keycodes = true, nowait = true, silent = true, expr = true, noremap = true },
+    },
   },
 }
 
