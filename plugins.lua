@@ -545,6 +545,7 @@ local plugins = {
       require "custom.configs.oil"
     end,
   },
+  -- { "github/copilot.vim", lazy = false },
   {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
@@ -569,6 +570,41 @@ local plugins = {
         { name = "buffer", group_index = 2 },
         { name = "nvim_lua", group_index = 2 },
         { name = "path", group_index = 2 },
+      },
+    },
+  },
+  {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    config = function(_, opts)
+      local flash = require "flash"
+      flash.setup(opts)
+      _G.flashnav = {
+        jump = function()
+          flash.jump { search = { mode = "search" } }
+        end,
+        jumptoline = function()
+          flash.jump { search = { mode = "search", max_length = 0 }, label = { after = { 0, 0 } }, pattern = "^" }
+        end,
+      }
+    end,
+    opts = {},
+    keys = {
+      {
+        "s",
+        mode = { "n", "x", "o" },
+        function()
+          require("flash").jump()
+        end,
+        desc = "Flash",
+      },
+      {
+        "r",
+        mode = "o",
+        function()
+          require("flash").remote()
+        end,
+        desc = "Remote Flash",
       },
     },
   },
