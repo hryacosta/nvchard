@@ -53,6 +53,12 @@ M.mason = {
     "typescript-language-server",
     "deno",
 
+    "js-debug-adapter",
+    "java-debug-adapter",
+    "java-test",
+    "prettier",
+    "standardjs",
+
     -- c/cpp stuff
     "clangd",
     "clang-format",
@@ -63,6 +69,7 @@ M.mason = {
     "dart-debug-adapter",
     "swift-mesonlsp",
     "java-debug-adapter",
+    "node-debug2-adapter",
   },
 }
 

@@ -573,41 +573,6 @@ local plugins = {
       },
     },
   },
-  {
-    "folke/flash.nvim",
-    event = "VeryLazy",
-    config = function(_, opts)
-      local flash = require "flash"
-      flash.setup(opts)
-      _G.flashnav = {
-        jump = function()
-          flash.jump { search = { mode = "search" } }
-        end,
-        jumptoline = function()
-          flash.jump { search = { mode = "search", max_length = 0 }, label = { after = { 0, 0 } }, pattern = "^" }
-        end,
-      }
-    end,
-    opts = {},
-    keys = {
-      {
-        "s",
-        mode = { "n", "x", "o" },
-        function()
-          require("flash").jump()
-        end,
-        desc = "Flash",
-      },
-      {
-        "r",
-        mode = "o",
-        function()
-          require("flash").remote()
-        end,
-        desc = "Remote Flash",
-      },
-    },
-  },
 }
 
 return plugins
