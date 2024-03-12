@@ -173,7 +173,7 @@ local plugins = {
         debounce_ms = 800,
         suggestion_color = { gui = "#808080", cterm = 244 },
         exclude_filetypes = { "TelescopePrompt", "NvimTree" },
-        log_file_path = nil, -- absolute path to Tabnine log file
+        log_file_path = "~/.cofig/nvim/lua/custom/log/",
       }
     end,
   },
@@ -527,17 +527,6 @@ local plugins = {
       save_empty = false,
     },
   },
-  -- {
-  --   "bennypowers/nvim-regexplainer",
-  --   config = function()
-  --     require("regexplainer").setup()
-  --   end,
-  --   dependencies = {
-  --     "nvim-treesitter/nvim-treesitter",
-  --     "MunifTanjim/nui.nvim",
-  --   },
-  -- },
-
   {
     "stevearc/oil.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -572,6 +561,15 @@ local plugins = {
         { name = "path", group_index = 2 },
       },
     },
+  },
+  {
+    "mxsdev/nvim-dap-vscode-js",
+    requires = { "mfussenegger/nvim-dap" },
+    config = function()
+      require("dap-vscode-js").setup {
+        adapters = { "pwa-node", "pwa-chrome", "pwa-msedge", "node-terminal", "pwa-extensionHost" },
+      }
+    end,
   },
 }
 
