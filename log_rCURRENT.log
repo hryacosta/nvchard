@@ -1,0 +1,99 @@
+INFO [process_setup] [2024-03-12:13:24:57 TabNine INFO] 
+============ Tabnine process /Users/henryacosta/.local/share/nvim/lazy/tabnine-nvim/lua/tabnine/../../binaries/4.116.0/x86_64-apple-darwin/TabNine (17129) started ============
+INFO [TabNine::main_utils] [2024-03-12:13:24:57 TabNine INFO] /Users/henryacosta/.local/share/nvim/lazy/tabnine-nvim/lua/tabnine/../../binaries/4.116.0/x86_64-apple-darwin/TabNine --client nvim --client-metadata ide-restart-counter=1 pluginVersion=1.7.0 --log-file-path=./log/
+INFO [watchdog_api::wd_client] [2024-03-12:13:24:57 TabNine INFO] Initializing watchdog client...
+INFO [TabNine::bootstrap_support] [2024-03-12:13:24:57 TabNine INFO] trying to start tabnine version Some("4.116.0")
+INFO [TabNine::bootstrap_support] [2024-03-12:13:24:57 TabNine INFO] spawning tabnine with args ["/Users/henryacosta/.local/share/nvim/lazy/tabnine-nvim/lua/tabnine/../../binaries/4.116.0/x86_64-apple-darwin/TabNine", "--client", "nvim", "--client-metadata", "ide-restart-counter=1", "pluginVersion=1.7.0", "--log-file-path=./log/", "--no_bootstrap"]
+INFO [TabNine::bootstrap_support] [2024-03-12:13:24:57 TabNine INFO] started tabnine process pid 17132 version Some("4.116.0"), desired version was Some("4.116.0") this version is Some("4.116.0")
+INFO [process_setup] [2024-03-12:13:24:57 TabNine INFO] 
+============ Tabnine process /Users/henryacosta/.local/share/nvim/lazy/tabnine-nvim/lua/tabnine/../../binaries/4.116.0/x86_64-apple-darwin/TabNine (17132) started ============
+INFO [TabNine::main_utils] [2024-03-12:13:24:57 TabNine INFO] /Users/henryacosta/.local/share/nvim/lazy/tabnine-nvim/lua/tabnine/../../binaries/4.116.0/x86_64-apple-darwin/TabNine --client nvim --client-metadata ide-restart-counter=1 pluginVersion=1.7.0 --log-file-path=./log/ --no_bootstrap
+INFO [watchdog_api::wd_client] [2024-03-12:13:24:57 TabNine INFO] Initializing watchdog client...
+INFO [models_api_singleton] [2024-03-12:13:24:57 TabNine INFO] Creating models api singleton...
+INFO [models_api_singleton] [2024-03-12:13:24:57 TabNine INFO] Updating models API access token...
+INFO [lunar_connection] [2024-03-12:13:24:57 TabNine INFO] lunar settings update thread started (Local(Public) ce94127b)
+INFO [lunar_connection] [2024-03-12:13:24:57 TabNine INFO] lunar settings update thread started (Local(Public) ce94127b)
+INFO [lunar_connection] [2024-03-12:13:24:57 TabNine INFO] lunar settings update thread started (Remote cloud)
+INFO [auth::capabilities] [2024-03-12:13:24:57 TabNine INFO] User changed. Refreshing capabilities
+INFO [auth::capabilities] [2024-03-12:13:24:57 TabNine INFO] Refreshing capabilities
+INFO [frontend::initialize] [2024-03-12:13:24:57 TabNine INFO] Started.
+INFO [bootstrapper::bootstrapper_lib] [2024-03-12:13:24:58 TabNine INFO] current version is Some(Version { major: 4, minor: 116, patch: 0, pre: [], build: [] }), spawned version is Some(Version { major: 4, minor: 116, patch: 0, pre: [], build: [] }), remote version is Version { major: 4, minor: 116, patch: 0, pre: [], build: [] }
+INFO [bootstrapper::bootstrapper_lib] [2024-03-12:13:24:58 TabNine INFO] don't need to upgrade
+INFO [models_api_singleton] [2024-03-12:13:24:58 TabNine INFO] Updated models API access token of user: Some("Henry Acosta")
+WARN [lunar_connection::cloud_availability] [2024-03-12:13:24:58 TabNine WARN] Cannot connect to cloud: pinging to: host=cloud.tabnine.com, port=443
+Failed to connect to cloud ()
+
+INFO [actix_server::builder] [2024-03-12:13:24:58 TabNine INFO] starting 8 workers
+INFO [ui::http_server] [2024-03-12:13:24:58 TabNine INFO] Hub HTTP server started on http://127.0.0.1:54165/sec-kjxsbwgugvnvqdxcjktg
+INFO [actix_server::server] [2024-03-12:13:24:58 TabNine INFO] Tokio runtime found; starting in existing Tokio runtime
+INFO [frontend::initialize] [2024-03-12:13:24:58 TabNine INFO] Hub site is: https://hub.tabnine.com/v9/?tabnineUrl=http://127.0.0.1:54165/sec-kjxsbwgugvnvqdxcjktg
+INFO [cloud2_utils::snippet_suggestions_host] [2024-03-12:13:24:58 TabNine INFO] enrichment config - returning default config
+INFO [cloud2_utils::snippet_suggestions_host] [2024-03-12:13:24:59 TabNine INFO] enrichment config - returning default config
+INFO [cloud2_utils::snippet_suggestions_host] [2024-03-12:13:24:59 TabNine INFO] enrichment config - returning default config
+INFO [server::indexing::repo_indexer] [2024-03-12:13:24:59 TabNine INFO] Recreating repo indexer, dense false => true, sparse false => true
+INFO [server::indexing::workspace] [2024-03-12:13:24:59 TabNine INFO] repo indexing started for /Users/henryacosta/.config/nvim/lua/custom
+INFO [cloud2_utils::snippet_suggestions_host] [2024-03-12:13:24:59 TabNine INFO] enrichment config - returning default config
+INFO [similarity_search::repo_indexing::repo_indexer] [2024-03-12:13:24:59 TabNine INFO] Waiting for vdb to start before repo indexing can start for /Users/henryacosta/.config/nvim/lua/custom
+INFO [similarity_search::repo_indexing::repo_indexer] [2024-03-12:13:24:59 TabNine INFO] Repo indexing started for /Users/henryacosta/.config/nvim/lua/custom
+INFO [similarity_search::repo_indexing::indexing_status] [2024-03-12:13:24:59 TabNine INFO] indexing status tracker started listening - expecting [(DenseIndexer, 12), (SparseIndexer, 12), (ListFiles, 12)] jobs
+INFO [similarity_search::repo_indexing::indexing_status] [2024-03-12:13:24:59 TabNine INFO] done receiving jobs for job id 'DenseIndexer', got 12/12 in 5.798625ms.
+INFO [similarity_search::repo_indexing::indexing_status] [2024-03-12:13:24:59 TabNine INFO] done receiving jobs for job id 'ListFiles', got 12/12 in 5.995079ms.
+INFO [similarity_search::repo_indexing::indexing_status] [2024-03-12:13:24:59 TabNine INFO] done receiving jobs for job id 'SparseIndexer', got 12/12 in 6.48529ms.
+INFO [similarity_search::repo_indexing::indexing_status] [2024-03-12:13:24:59 TabNine INFO] done receiving jobs, shutting down indexing status tracker
+INFO [cloud2_utils::snippet_suggestions_host] [2024-03-12:13:25:00 TabNine INFO] enrichment config - returning default config
+INFO [cloud2_utils::snippet_suggestions_host] [2024-03-12:13:25:02 TabNine INFO] enrichment config - returning default config
+ERROR [in_app_messaging::internal] [2024-03-12:13:25:02 TabNine ERROR] Error while fetching messages. reqwest::Error { kind: Decode, source: Error("EOF while parsing a value", line: 1, column: 0) }
+INFO [cloud2_utils::snippet_suggestions_host] [2024-03-12:13:25:05 TabNine INFO] enrichment config - returning default config
+INFO [io_server::dispatch::shutdown] [2024-03-12:13:25:05 TabNine INFO] Sending finished message from Input
+INFO [io_server::dispatch::shutdown] [2024-03-12:13:25:05 TabNine INFO] Sending finished message from ChannelWorker("default")
+INFO [io_server::dispatch::shutdown] [2024-03-12:13:25:05 TabNine INFO] Sending finished message from Output
+INFO [TabNine] [2024-03-12:13:25:05 TabNine INFO] exiting....
+INFO [TabNine::bootstrap_support] [2024-03-12:13:25:06 TabNine INFO] child process 17132 exited with status exit status: 0...
+INFO [process_setup] [2024-03-12:13:25:08 TabNine INFO] 
+============ Tabnine process /Users/henryacosta/.local/share/nvim/lazy/tabnine-nvim/lua/tabnine/../../binaries/4.116.0/x86_64-apple-darwin/TabNine (17238) started ============
+INFO [TabNine::main_utils] [2024-03-12:13:25:08 TabNine INFO] /Users/henryacosta/.local/share/nvim/lazy/tabnine-nvim/lua/tabnine/../../binaries/4.116.0/x86_64-apple-darwin/TabNine --client nvim --client-metadata ide-restart-counter=1 pluginVersion=1.7.0 --log-file-path=./log/
+INFO [watchdog_api::wd_client] [2024-03-12:13:25:08 TabNine INFO] Initializing watchdog client...
+INFO [TabNine::bootstrap_support] [2024-03-12:13:25:08 TabNine INFO] trying to start tabnine version Some("4.116.0")
+INFO [TabNine::bootstrap_support] [2024-03-12:13:25:08 TabNine INFO] spawning tabnine with args ["/Users/henryacosta/.local/share/nvim/lazy/tabnine-nvim/lua/tabnine/../../binaries/4.116.0/x86_64-apple-darwin/TabNine", "--client", "nvim", "--client-metadata", "ide-restart-counter=1", "pluginVersion=1.7.0", "--log-file-path=./log/", "--no_bootstrap"]
+INFO [TabNine::bootstrap_support] [2024-03-12:13:25:08 TabNine INFO] started tabnine process pid 17241 version Some("4.116.0"), desired version was Some("4.116.0") this version is Some("4.116.0")
+INFO [process_setup] [2024-03-12:13:25:08 TabNine INFO] 
+============ Tabnine process /Users/henryacosta/.local/share/nvim/lazy/tabnine-nvim/lua/tabnine/../../binaries/4.116.0/x86_64-apple-darwin/TabNine (17241) started ============
+INFO [TabNine::main_utils] [2024-03-12:13:25:08 TabNine INFO] /Users/henryacosta/.local/share/nvim/lazy/tabnine-nvim/lua/tabnine/../../binaries/4.116.0/x86_64-apple-darwin/TabNine --client nvim --client-metadata ide-restart-counter=1 pluginVersion=1.7.0 --log-file-path=./log/ --no_bootstrap
+INFO [watchdog_api::wd_client] [2024-03-12:13:25:08 TabNine INFO] Initializing watchdog client...
+INFO [models_api_singleton] [2024-03-12:13:25:08 TabNine INFO] Creating models api singleton...
+INFO [models_api_singleton] [2024-03-12:13:25:09 TabNine INFO] Updating models API access token...
+INFO [lunar_connection] [2024-03-12:13:25:09 TabNine INFO] lunar settings update thread started (Local(Public) ce94127b)
+INFO [lunar_connection] [2024-03-12:13:25:09 TabNine INFO] lunar settings update thread started (Local(Public) ce94127b)
+INFO [lunar_connection] [2024-03-12:13:25:09 TabNine INFO] lunar settings update thread started (Remote cloud)
+INFO [auth::capabilities] [2024-03-12:13:25:09 TabNine INFO] User changed. Refreshing capabilities
+INFO [auth::capabilities] [2024-03-12:13:25:09 TabNine INFO] Refreshing capabilities
+INFO [frontend::initialize] [2024-03-12:13:25:09 TabNine INFO] Started.
+INFO [bootstrapper::bootstrapper_lib] [2024-03-12:13:25:09 TabNine INFO] current version is Some(Version { major: 4, minor: 116, patch: 0, pre: [], build: [] }), spawned version is Some(Version { major: 4, minor: 116, patch: 0, pre: [], build: [] }), remote version is Version { major: 4, minor: 116, patch: 0, pre: [], build: [] }
+INFO [bootstrapper::bootstrapper_lib] [2024-03-12:13:25:09 TabNine INFO] don't need to upgrade
+INFO [models_api_singleton] [2024-03-12:13:25:09 TabNine INFO] Updated models API access token of user: Some("Henry Acosta")
+WARN [lunar_connection::cloud_availability] [2024-03-12:13:25:09 TabNine WARN] Cannot connect to cloud: pinging to: host=cloud.tabnine.com, port=443
+Failed to connect to cloud ()
+
+INFO [actix_server::builder] [2024-03-12:13:25:09 TabNine INFO] starting 8 workers
+INFO [ui::http_server] [2024-03-12:13:25:09 TabNine INFO] Hub HTTP server started on http://127.0.0.1:54176/sec-bwsuffcfgjsbttwbgwhw
+INFO [actix_server::server] [2024-03-12:13:25:09 TabNine INFO] Tokio runtime found; starting in existing Tokio runtime
+INFO [frontend::initialize] [2024-03-12:13:25:09 TabNine INFO] Hub site is: https://hub.tabnine.com/v9/?tabnineUrl=http://127.0.0.1:54176/sec-bwsuffcfgjsbttwbgwhw
+INFO [cloud2_utils::snippet_suggestions_host] [2024-03-12:13:25:09 TabNine INFO] enrichment config - returning default config
+INFO [cloud2_utils::snippet_suggestions_host] [2024-03-12:13:25:10 TabNine INFO] enrichment config - returning default config
+INFO [cloud2_utils::snippet_suggestions_host] [2024-03-12:13:25:10 TabNine INFO] enrichment config - returning default config
+INFO [server::indexing::repo_indexer] [2024-03-12:13:25:10 TabNine INFO] Recreating repo indexer, dense false => true, sparse false => true
+INFO [server::indexing::workspace] [2024-03-12:13:25:10 TabNine INFO] repo indexing started for /Users/henryacosta/.config/nvim/lua/custom
+INFO [similarity_search::repo_indexing::repo_indexer] [2024-03-12:13:25:10 TabNine INFO] Waiting for vdb to start before repo indexing can start for /Users/henryacosta/.config/nvim/lua/custom
+INFO [cloud2_utils::snippet_suggestions_host] [2024-03-12:13:25:10 TabNine INFO] enrichment config - returning default config
+INFO [similarity_search::repo_indexing::repo_indexer] [2024-03-12:13:25:10 TabNine INFO] Repo indexing started for /Users/henryacosta/.config/nvim/lua/custom
+INFO [similarity_search::repo_indexing::indexing_status] [2024-03-12:13:25:10 TabNine INFO] indexing status tracker started listening - expecting [(DenseIndexer, 12), (SparseIndexer, 12), (ListFiles, 12)] jobs
+INFO [similarity_search::repo_indexing::indexing_status] [2024-03-12:13:25:10 TabNine INFO] done receiving jobs for job id 'ListFiles', got 12/12 in 3.143502ms.
+INFO [similarity_search::repo_indexing::indexing_status] [2024-03-12:13:25:10 TabNine INFO] done receiving jobs for job id 'SparseIndexer', got 12/12 in 3.95767ms.
+INFO [similarity_search::repo_indexing::indexing_status] [2024-03-12:13:25:11 TabNine INFO] done receiving jobs for job id 'DenseIndexer', got 12/12 in 905.514025ms.
+INFO [similarity_search::repo_indexing::indexing_status] [2024-03-12:13:25:11 TabNine INFO] done receiving jobs, shutting down indexing status tracker
+INFO [cloud2_utils::snippet_suggestions_host] [2024-03-12:13:25:13 TabNine INFO] enrichment config - returning default config
+INFO [cloud2_utils::snippet_suggestions_host] [2024-03-12:13:25:14 TabNine INFO] enrichment config - returning default config
+ERROR [in_app_messaging::internal] [2024-03-12:13:25:14 TabNine ERROR] Error while fetching messages. reqwest::Error { kind: Decode, source: Error("EOF while parsing a value", line: 1, column: 0) }
+INFO [cloud2_utils::snippet_suggestions_host] [2024-03-12:13:25:14 TabNine INFO] enrichment config - returning default config
+INFO [cloud2_utils::snippet_suggestions_host] [2024-03-12:13:25:15 TabNine INFO] enrichment config - returning default config
+INFO [cloud2_utils::snippet_suggestions_host] [2024-03-12:13:25:15 TabNine INFO] enrichment config - returning default config
