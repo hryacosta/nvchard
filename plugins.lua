@@ -76,7 +76,35 @@ local plugins = {
   },
 
   { "nvim-neotest/neotest-plenary" },
-
+  -- {
+  --   "mxsdev/nvim-dap-vscode-js",
+  --   requires = { "mfussenegger/nvim-dap" },
+  --   config = function()
+  --     require("dap-vscode-js").setup {
+  --       adapters = { "pwa-node", "pwa-chrome", "pwa-msedge", "node-terminal", "pwa-extensionHost" },
+  --     }
+  --   end,
+  -- },
+  {
+    "mxsdev/nvim-dap-vscode-js",
+    config = function()
+      local utils = require "dap-vscode-js.utils"
+      require("dap-vscode-js").setup {
+        adapters = { "pwa-node", "pwa-chrome", "pwa-msedge", "node-terminal", "pwa-extensionHost" },
+        debugger_path = utils.join_paths(utils.get_runtime_dir(), "lazy/vscode-js-debug"),
+      }
+      require "custom.configs.nvim-dap-vscode-js"
+    end,
+    dependencies = {
+      "mfussenegger/nvim-dap",
+      "rcarriga/nvim-dap-ui",
+      {
+        "microsoft/vscode-js-debug",
+        build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
+      },
+    },
+    ft = "javascript",
+  },
   {
     "nvim-neotest/neotest",
     dependencies = {
@@ -172,6 +200,8 @@ local plugins = {
         dismiss_keymap = "<C-]>",
         debounce_ms = 800,
         suggestion_color = { gui = "#808080", cterm = 244 },
+        codelens_color = { gui = "#808080", cterm = 244 },
+        codelens_enabled = true,
         exclude_filetypes = { "TelescopePrompt", "NvimTree" },
         log_file_path = "./log/",
       }
