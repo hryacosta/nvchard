@@ -29,9 +29,9 @@ M.treesitter = {
   },
   auto_install = true,
 
-  -- highlight = {
-  --   enable = false,
-  -- },
+  highlight = {
+    enable = false,
+  },
   indent = {
     enable = true,
     disable = {
