@@ -203,7 +203,8 @@ local plugins = {
         codelens_color = { gui = "#808080", cterm = 244 },
         codelens_enabled = true,
         exclude_filetypes = { "TelescopePrompt", "NvimTree" },
-        log_file_path = "./log/",
+        log_file_path = nil,
+        -- log_file_path = "./log/",
       }
     end,
   },
